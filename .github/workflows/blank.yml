@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Download ngrok
         run: Invoke-WebRequest -Uri "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip" -OutFile "ngrok.zip"
+      - name: Download ngrok
+        run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip Expand-Archive ngrok.zip .
       - name: Unzip ngrok
         run: Expand-Archive ngrok.zip .
       - name: Add ngrok Authtoken
